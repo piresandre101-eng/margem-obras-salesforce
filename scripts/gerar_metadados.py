@@ -371,7 +371,7 @@ def _acesso_e_app() -> None:
             nome = f.name.replace(".field-meta.xml", "")
             perm_campo += bloco("fieldPermissions", {
                 "editable": "false" if calculado else "true", "field": f"{o}.{nome}", "readable": "true"})
-    abas = ["Obra__c", "Disciplina_Obra__c", "Snapshot_Semanal__c"]
+    abas = ["Inicio_Margem_de_Obras", "Obra__c", "Disciplina_Obra__c", "Snapshot_Semanal__c"]
     perm_aba = "".join(bloco("tabSettings", {"tab": t, "visibility": "Visible"}) for t in abas)
     app_vis = bloco("applicationVisibilities", {"application": "Margem_de_Obras", "visible": "true"})
     gravar(RAIZ / "permissionsets" / "Margem_Obras.permissionset-meta.xml",
@@ -384,13 +384,23 @@ def _acesso_e_app() -> None:
         gravar(RAIZ / "tabs" / f"{t}.tab-meta.xml",
                CABEC + '<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">\n'
                + _x("customObject", True) + _x("motif", motivo) + "</CustomTab>\n")
+    # Aba da página inicial (Lightning App Page em flexipages/Inicio_Margem_de_Obras)
+    gravar(RAIZ / "tabs" / "Inicio_Margem_de_Obras.tab-meta.xml",
+           CABEC + '<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">\n'
+           + _x("flexiPage", "Inicio_Margem_de_Obras") + _x("label", "Início")
+           + _x("motif", "Custom24: Building") + "</CustomTab>\n")
+    # Página de registro da Obra (flexipages/Obra_Pagina) ativada como padrão dentro deste app
+    sobrescrita = ("    <actionOverrides>\n        <actionName>View</actionName>\n        <comment>Página Lightning da Obra</comment>\n"
+                   "        <content>Obra_Pagina</content>\n        <formFactor>Large</formFactor>\n"
+                   "        <skipRecordTypeSelect>false</skipRecordTypeSelect>\n        <type>Flexipage</type>\n"
+                   "        <pageOrSobjectType>Obra__c</pageOrSobjectType>\n    </actionOverrides>\n")
     gravar(RAIZ / "applications" / "Margem_de_Obras.app-meta.xml",
-           CABEC + '<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">\n'
+           CABEC + '<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">\n' + sobrescrita
            + _x("description", "Margem, risco e histórico semanal das obras (réplica de um sistema de margem de projetos de engenharia).")
            + _x("formFactors", "Large") + _x("isNavAutoTempTabsDisabled", False)
            + _x("isNavPersonalizationDisabled", False) + _x("isNavTabPersistenceDisabled", False)
            + _x("label", "Margem de Obras") + _x("navType", "Standard")
-           + "".join(_x("tabs", t) for t in ["standard-home", "Obra__c", "Disciplina_Obra__c", "Snapshot_Semanal__c",
+           + "".join(_x("tabs", t) for t in ["Inicio_Margem_de_Obras", "Obra__c", "Disciplina_Obra__c", "Snapshot_Semanal__c",
                                              "standard-report", "standard-Dashboard"])
            + _x("uiType", "Lightning") + "</CustomApplication>\n")
 

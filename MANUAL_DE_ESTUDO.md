@@ -366,6 +366,32 @@ grupo, não a média das margens. Uma obra de R$ 2 mil não pesa o mesmo que uma
 O **dashboard** "Painel de Margem de Obras" reúne os três, usando o gráfico definido em cada relatório (`useReportChart`).
 É do tipo `LoggedInUser` (dinâmico): cada pessoa vê com as próprias permissões.
 
+### 11.1 Telas: layout × página Lightning (duas camadas diferentes)
+
+| Camada | O que controla | Neste projeto |
+|---|---|---|
+| **Page Layout** (`layouts/`) | *Quais campos* aparecem, em que **seções**, e quais listas relacionadas | Seções "Margem e risco", "Receita e custo", "Prazo e produtividade" |
+| **Compact Layout** (`compactLayouts/`) | Os campos de **destaque** no topo do registro | Grupo de risco, margem estimada, resultado, P.O., receita |
+| **List View** (`listViews/`) | Listas filtradas na aba do objeto | "Obras ativas em prejuízo", "em alto risco"… |
+| **Lightning Page / FlexiPage** (`flexipages/`) | A **moldura** da página: regiões, abas, componentes | Página da Obra com abas e quadro "Como ler"; página inicial com o painel |
+
+Só mudar o *layout* não muda a "cara" da página: ela continua na moldura padrão (cabeçalho + Detalhes/Relacionado).
+A página Lightning é montada no **Lightning App Builder** (engrenagem → Editar página), ou como metadado XML, como aqui.
+
+- `Obra_Pagina` (tipo **RecordPage**, modelo de cabeçalho + coluna principal + lateral): `force:highlightsPanel` (usa o
+  compact layout), um `flexipage:tabset` com três `flexipage:tab` ("Margem e risco" = `force:detailPanel`, ou seja, o
+  page layout; "Disciplinas" e "Histórico semanal" = `force:relatedListSingleContainer`) e um `flexipage:richText` na lateral.
+- `Inicio_Margem_de_Obras` (tipo **AppPage**): texto de apresentação + `desktopDashboards:embeddedDashboard` (o painel).
+  Uma **aba** (`tabs/Inicio_Margem_de_Obras.tab-meta.xml`) a coloca como primeiro item do app.
+- **Ativação:** uma página Lightning só aparece depois de ativada. Aqui a ativação está no próprio app
+  (`<actionOverrides>` com `type Flexipage` para a ação **View** de `Obra__c`), então ela vale **dentro do app Margem de Obras**.
+  No App Builder o equivalente é "Ativação → Padrão do app".
+
+### Exercício
+Abra uma obra → engrenagem → **Editar página**. Arraste um componente "Gráfico de relatório" para a lateral, escolha
+"Ranking das equipes e subdisciplinas", salve e veja o resultado. Depois rode
+`sf project retrieve start --metadata FlexiPage:Obra_Pagina` e compare o XML com a versão anterior (`git diff`).
+
 ---
 
 ## 12. O que deu errado

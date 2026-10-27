@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Página Lightning da Obra</comment>
+        <content>Obra_Pagina</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Obra__c</pageOrSobjectType>
+    </actionOverrides>
     <description>Margem, risco e histórico semanal das obras (réplica de um sistema de margem de projetos de engenharia).</description>
     <formFactors>Large</formFactors>
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
@@ -7,7 +16,7 @@
     <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
     <label>Margem de Obras</label>
     <navType>Standard</navType>
-    <tabs>standard-home</tabs>
+    <tabs>Inicio_Margem_de_Obras</tabs>
     <tabs>Obra__c</tabs>
     <tabs>Disciplina_Obra__c</tabs>
     <tabs>Snapshot_Semanal__c</tabs>
