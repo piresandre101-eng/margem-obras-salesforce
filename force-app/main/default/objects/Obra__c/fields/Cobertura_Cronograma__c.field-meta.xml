@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cobertura_Cronograma__c</fullName>
+    <label>Cobertura do Cronograma</label>
+    <description>Dias lançados (realizados + restantes) ÷ dias previstos (TP).</description>
+    <inlineHelpText>Dias lançados (realizados + restantes) ÷ dias previstos (TP).</inlineHelpText>
+    <formula>IF(TP_Dias__c &gt; 0, (Dias_Realizados__c + Dias_Restantes__c) / TP_Dias__c, NULL)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <precision>18</precision>
+    <scale>2</scale>
+    <type>Percent</type>
+</CustomField>

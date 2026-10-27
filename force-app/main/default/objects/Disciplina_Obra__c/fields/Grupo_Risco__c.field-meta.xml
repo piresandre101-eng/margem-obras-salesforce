@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Grupo_Risco__c</fullName>
+    <label>Grupo de Risco</label>
+    <description>Em prejuízo: margem &lt; 0 · Alto risco: &lt; 10% ou o TP restante na diária real levaria ao prejuízo · Risco moderado: &lt; meta ou o TP restante levaria abaixo da meta · Positiva: demais.</description>
+    <formula>IF(ISBLANK(Margem_Estimada__c), "Sem receita",
+IF(Margem_Estimada__c &lt; 0, "1. Em prejuízo",
+IF(OR(Margem_Estimada__c &lt; $CustomMetadata.Parametro_Margem__mdt.Padrao.Limite_Alto_Risco__c, AND(Obra__r.Em_Andamento__c, NOT(ISBLANK(IF(Diaria_Real__c &gt; 0, Resultado_Projetado__c / Diaria_Real__c, NULL))), Dias_TP_Nao_Lancados__c &gt; IF(Diaria_Real__c &gt; 0, Resultado_Projetado__c / Diaria_Real__c, NULL))), "2. Alto risco",
+IF(OR(Margem_Estimada__c &lt; Meta_Margem_Pct__c, AND(Obra__r.Em_Andamento__c, NOT(ISBLANK(IF(Diaria_Real__c &gt; 0, (Orcamento_Producao__c - Custo_Total__c) / Diaria_Real__c, NULL))), Dias_TP_Nao_Lancados__c &gt; MAX(IF(Diaria_Real__c &gt; 0, (Orcamento_Producao__c - Custo_Total__c) / Diaria_Real__c, NULL), 0))), "3. Risco moderado", "4. Positiva"))))</formula>
+    <formulaTreatBlanksAs>BlankAsBlank</formulaTreatBlanksAs>
+    <type>Text</type>
+</CustomField>

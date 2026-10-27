@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Diaria_Real_vs_Orcada__c</fullName>
+    <label>Diária Real ÷ Orçada</label>
+    <description>Acima de 1: cada dia custa mais do que o orçamento previa.</description>
+    <formula>IF(AND(Diaria_Real__c &gt; 0, Diaria_Orcada__c &gt; 0), Diaria_Real__c / Diaria_Orcada__c, NULL)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <precision>18</precision>
+    <scale>2</scale>
+    <type>Number</type>
+</CustomField>

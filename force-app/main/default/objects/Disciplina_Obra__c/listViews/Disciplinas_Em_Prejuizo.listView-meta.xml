@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Disciplinas_Em_Prejuizo</fullName>
+    <columns>NAME</columns>
+    <columns>Equipe__c</columns>
+    <columns>Receita__c</columns>
+    <columns>Margem_Estimada__c</columns>
+    <columns>Resultado_Projetado__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Grupo_Risco__c</field>
+        <operation>equals</operation>
+        <value>1. Em prejuízo</value>
+    </filters>
+    <label>Disciplinas em prejuízo</label>
+</ListView>

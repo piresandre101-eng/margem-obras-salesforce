@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dias_Realizados__c</fullName>
+    <label>Dias Consumidos</label>
+    <summarizedField>Custo_Etapa__c.Dias_Realizados__c</summarizedField>
+    <summaryForeignKey>Custo_Etapa__c.Disciplina_Obra__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <type>Summary</type>
+</CustomField>

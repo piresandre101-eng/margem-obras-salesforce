@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Área da Disciplina</label>
+    <pluralLabel>Áreas das Disciplinas</pluralLabel>
+    <description>Sigla da disciplina → equipe e nome.</description>
+    <visibility>Public</visibility>
+</CustomObject>

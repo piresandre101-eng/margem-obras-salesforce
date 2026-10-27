@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Queda_Alerta__c</fullName>
+    <label>Queda para Alerta</label>
+    <description>Queda de margem que gera alerta (5 p.p.).</description>
+    <precision>5</precision>
+    <scale>2</scale>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <type>Percent</type>
+</CustomField>

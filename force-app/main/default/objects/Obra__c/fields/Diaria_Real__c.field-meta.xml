@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Diaria_Real__c</fullName>
+    <label>Diária Real</label>
+    <description>Custo total no cronograma ÷ dias lançados.</description>
+    <inlineHelpText>Custo total no cronograma ÷ dias lançados.</inlineHelpText>
+    <formula>IF((Dias_Realizados__c + Dias_Restantes__c) &gt; 0, (Custo_Consumido__c + Custo_Restante__c) / (Dias_Realizados__c + Dias_Restantes__c), NULL)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <precision>18</precision>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

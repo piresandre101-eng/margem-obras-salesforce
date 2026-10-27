@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Meta_Pct__c</fullName>
+    <label>Meta de Margem</label>
+    <formula>IF(Receita__c &gt; 0, Meta_Valor__c / Receita__c, $CustomMetadata.Parametro_Margem__mdt.Padrao.Meta_Margem__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <precision>18</precision>
+    <scale>2</scale>
+    <type>Percent</type>
+</CustomField>

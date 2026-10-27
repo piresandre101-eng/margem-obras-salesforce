@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Obras_Em_Prejuizo</fullName>
+    <columns>NAME</columns>
+    <columns>PO__c</columns>
+    <columns>Grupo_Risco__c</columns>
+    <columns>Margem_Estimada__c</columns>
+    <columns>Resultado_Projetado__c</columns>
+    <columns>Receita__c</columns>
+    <columns>Cobertura_Cronograma__c</columns>
+    <columns>Diaria_Real_vs_Orcada__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Em_Andamento__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Receita__c</field>
+        <operation>greaterThan</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Grupo_Risco__c</field>
+        <operation>equals</operation>
+        <value>1. Em prejuízo</value>
+    </filters>
+    <label>Obras ativas em prejuízo</label>
+</ListView>

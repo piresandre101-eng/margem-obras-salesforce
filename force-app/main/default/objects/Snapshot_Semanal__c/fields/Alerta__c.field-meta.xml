@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Alerta__c</fullName>
+    <label>Alerta</label>
+    <description>Piorou de grupo / Queda de margem / Nova obra em risco / AQ acima do limite.</description>
+    <length>80</length>
+    <type>Text</type>
+</CustomField>

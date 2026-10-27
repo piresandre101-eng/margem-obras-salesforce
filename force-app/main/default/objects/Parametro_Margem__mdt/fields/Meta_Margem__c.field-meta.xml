@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Meta_Margem__c</fullName>
+    <label>Meta de Margem</label>
+    <description>Meta padrão (20%).</description>
+    <precision>5</precision>
+    <scale>2</scale>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <type>Percent</type>
+</CustomField>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>Disciplina_Obra__c.Resultado_Projetado__c:SUM / Disciplina_Obra__c.Receita__c:SUM</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Margem estimada (ponderada)</masterLabel>
+        <scale>1</scale>
+    </aggregates>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>FORMULA1</column>
+        </chartSummaries>
+        <chartType>HorizontalBar</chartType>
+        <enableHoverLabels>true</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>Disciplina_Obra__c.Equipe__c</groupingColumn>
+        <location>CHART_TOP</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>true</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns><field>CHILD_NAME</field></columns>
+    <columns><aggregateTypes>Sum</aggregateTypes><field>Disciplina_Obra__c.Receita__c</field></columns>
+    <columns><aggregateTypes>Sum</aggregateTypes><field>Disciplina_Obra__c.Custo_Total__c</field></columns>
+    <columns><aggregateTypes>Sum</aggregateTypes><field>Disciplina_Obra__c.Resultado_Projetado__c</field></columns>
+    <columns><field>Disciplina_Obra__c.Margem_Estimada__c</field></columns>
+    <columns><field>Disciplina_Obra__c.Diaria_Real_vs_Orcada__c</field></columns>
+    <description>Margem ponderada pela receita de cada equipe (soma das subdisciplinas), só linhas com receita orçada.</description>
+    <filter>
+        <criteriaItems>
+            <column>Disciplina_Obra__c.Receita__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterThan</operator>
+            <value>0</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Disciplina_Obra__c.Equipe__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Disciplina_Obra__c.Sigla__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Ranking das equipes e subdisciplinas</name>
+    <params><name>co</name><value>1</value></params>
+    <reportType>CustomEntityCustomEntity$Obra__c$Disciplina_Obra__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+</Report>

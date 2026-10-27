@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Obra</label>
+    <pluralLabel>Obras</pluralLabel>
+    <description>Contrato de projeto. Receita e custos vêm das disciplinas (roll-up).</description>
+    <nameField>
+        <label>Nome da Obra</label>
+        <type>Text</type>
+    </nameField>
+    <compactLayoutAssignment>Destaques_Obra</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <sharingModel>ReadWrite</sharingModel>
+    <enableActivities>false</enableActivities>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableBulkApi>true</enableBulkApi>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+</CustomObject>

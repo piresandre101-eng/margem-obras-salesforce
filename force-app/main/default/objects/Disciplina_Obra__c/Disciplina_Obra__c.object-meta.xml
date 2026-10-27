@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Disciplina da Obra</label>
+    <pluralLabel>Disciplinas da Obra</pluralLabel>
+    <description>Obra × disciplina: receita, impostos, meta e dias previstos; custos vêm das etapas (roll-up).</description>
+    <nameField>
+        <label>Disciplina da Obra</label>
+        <type>Text</type>
+    </nameField>
+    <compactLayoutAssignment>Destaques_Disciplina</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <sharingModel>ControlledByParent</sharingModel>
+    <enableActivities>false</enableActivities>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableBulkApi>true</enableBulkApi>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+</CustomObject>

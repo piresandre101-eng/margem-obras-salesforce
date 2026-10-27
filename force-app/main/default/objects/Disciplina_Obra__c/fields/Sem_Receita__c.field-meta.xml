@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sem_Receita__c</fullName>
+    <label>Custo sem Receita Orçada</label>
+    <description>Trabalho lançado numa disciplina não vendida na obra (custo absorvido).</description>
+    <formula>AND(Receita__c &lt;= 0, (Custo_Consumido__c + Custo_Restante__c) &gt; 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <type>Checkbox</type>
+</CustomField>

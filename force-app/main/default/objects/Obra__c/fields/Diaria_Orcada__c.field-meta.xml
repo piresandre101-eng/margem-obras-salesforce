@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Diaria_Orcada__c</fullName>
+    <label>Diária Orçada</label>
+    <description>Orçamento de Produção ÷ dias previstos (TP).</description>
+    <inlineHelpText>Orçamento de Produção ÷ dias previstos (TP).</inlineHelpText>
+    <formula>IF(AND(TP_Dias__c &gt; 0, Orcamento_Producao__c &gt; 0), Orcamento_Producao__c / TP_Dias__c, NULL)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <precision>18</precision>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

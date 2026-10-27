@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Disciplinas_Sem_Receita</fullName>
+    <columns>NAME</columns>
+    <columns>Equipe__c</columns>
+    <columns>Custo_Total__c</columns>
+    <columns>Resultado_Projetado__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Sem_Receita__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Trabalho sem receita orçada</label>
+</ListView>

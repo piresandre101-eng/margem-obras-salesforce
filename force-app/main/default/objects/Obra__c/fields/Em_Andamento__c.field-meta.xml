@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Em_Andamento__c</fullName>
+    <label>Em Andamento</label>
+    <description>Ativa = saldo a faturar ou dias restantes no cronograma.</description>
+    <formula>OR(Saldo_Faturar__c &gt; 0, Dias_Restantes__c &gt; 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <type>Checkbox</type>
+</CustomField>

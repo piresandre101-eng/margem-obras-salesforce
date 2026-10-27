@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dias_TP_Nao_Lancados__c</fullName>
+    <label>Dias do TP Ainda Não Lançados</label>
+    <description>Prazo disponível ainda fora do cronograma (não é custo).</description>
+    <formula>IF(AND(Obra__r.Em_Andamento__c, TP_Dias__c &gt; 0), MAX(0, TP_Dias__c - Dias_Realizados__c - Dias_Restantes__c), 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <precision>18</precision>
+    <scale>1</scale>
+    <type>Number</type>
+</CustomField>

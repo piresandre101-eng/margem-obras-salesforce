@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Margem_Estimada__c</fullName>
+    <label>Margem Estimada</label>
+    <description>Leitura principal: margem ao término com o cronograma atual. Meta: 20%.</description>
+    <inlineHelpText>Leitura principal: margem ao término com o cronograma atual. Meta: 20%.</inlineHelpText>
+    <formula>IF(Receita__c &gt; 0, (Receita__c - Impostos__c - (Custo_Consumido__c + Custo_Restante__c)) / Receita__c, NULL)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <precision>18</precision>
+    <scale>2</scale>
+    <type>Percent</type>
+</CustomField>

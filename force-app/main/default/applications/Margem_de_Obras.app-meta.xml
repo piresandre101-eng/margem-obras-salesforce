@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Margem, risco e histórico semanal das obras (réplica de um sistema de margem de projetos de engenharia).</description>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>Margem de Obras</label>
+    <navType>Standard</navType>
+    <tabs>standard-home</tabs>
+    <tabs>Obra__c</tabs>
+    <tabs>Disciplina_Obra__c</tabs>
+    <tabs>Snapshot_Semanal__c</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <uiType>Lightning</uiType>
+</CustomApplication>

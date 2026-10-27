@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Limite_Alto_Risco__c</fullName>
+    <label>Limite Alto Risco</label>
+    <description>Margem abaixo disso = alto risco (10%).</description>
+    <precision>5</precision>
+    <scale>2</scale>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <type>Percent</type>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tipo_Contrato__c</fullName>
+    <label>Classificação do Contrato</label>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value><fullName>HIGH P.</fullName><default>false</default><label>HIGH P.</label></value>
+            <value><fullName>MEDIUM P.</fullName><default>false</default><label>MEDIUM P.</label></value>
+            <value><fullName>LOW P.</fullName><default>false</default><label>LOW P.</label></value>
+            <value><fullName>Sem classificação</fullName><default>false</default><label>Sem classificação</label></value>
+        </valueSetDefinition>
+    </valueSet>
+    <type>Picklist</type>
+</CustomField>

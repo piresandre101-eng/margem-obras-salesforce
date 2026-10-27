@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Equipe__c</fullName>
+    <label>Equipe</label>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value><fullName>Estruturas</fullName><default>false</default><label>Estruturas</label></value>
+            <value><fullName>Hidráulicas</fullName><default>false</default><label>Hidráulicas</label></value>
+            <value><fullName>Arquitetura</fullName><default>false</default><label>Arquitetura</label></value>
+            <value><fullName>Elétricas</fullName><default>false</default><label>Elétricas</label></value>
+            <value><fullName>HVAC</fullName><default>false</default><label>HVAC</label></value>
+            <value><fullName>Outras</fullName><default>false</default><label>Outras</label></value>
+        </valueSetDefinition>
+    </valueSet>
+    <type>Picklist</type>
+</CustomField>

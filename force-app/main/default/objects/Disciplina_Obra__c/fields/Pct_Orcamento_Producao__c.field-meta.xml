@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pct_Orcamento_Producao__c</fullName>
+    <label>% do Orçamento de Produção no Cronograma</label>
+    <description>Custo no cronograma ÷ Orçamento de Produção. Acima de 100% = abaixo da meta.</description>
+    <inlineHelpText>Custo no cronograma ÷ Orçamento de Produção. Acima de 100% = abaixo da meta.</inlineHelpText>
+    <formula>IF(Orcamento_Producao__c &gt; 0, (Custo_Consumido__c + Custo_Restante__c) / Orcamento_Producao__c, NULL)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <precision>18</precision>
+    <scale>2</scale>
+    <type>Percent</type>
+</CustomField>

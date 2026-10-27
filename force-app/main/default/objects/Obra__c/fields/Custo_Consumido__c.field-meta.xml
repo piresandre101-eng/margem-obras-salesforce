@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Custo_Consumido__c</fullName>
+    <label>Custo Consumido</label>
+    <summarizedField>Disciplina_Obra__c.Custo_Consumido__c</summarizedField>
+    <summaryForeignKey>Disciplina_Obra__c.Obra__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <type>Summary</type>
+</CustomField>
