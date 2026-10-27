@@ -7,6 +7,14 @@
         <label>Nome da Obra</label>
         <type>Text</type>
     </nameField>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Pagina Lightning da Obra (padrao do org)</comment>
+        <content>Obra_Pagina</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
     <compactLayoutAssignment>Destaques_Obra</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
     <sharingModel>ReadWrite</sharingModel>

@@ -12,7 +12,7 @@
     <description>Margem, risco e histórico semanal das obras (réplica de um sistema de margem de projetos de engenharia).</description>
     <formFactors>Large</formFactors>
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
-    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavPersonalizationDisabled>true</isNavPersonalizationDisabled>
     <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
     <label>Margem de Obras</label>
     <navType>Standard</navType>

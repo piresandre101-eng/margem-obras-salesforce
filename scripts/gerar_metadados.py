@@ -398,7 +398,7 @@ def _acesso_e_app() -> None:
            CABEC + '<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">\n' + sobrescrita
            + _x("description", "Margem, risco e histórico semanal das obras (réplica de um sistema de margem de projetos de engenharia).")
            + _x("formFactors", "Large") + _x("isNavAutoTempTabsDisabled", False)
-           + _x("isNavPersonalizationDisabled", False) + _x("isNavTabPersistenceDisabled", False)
+           + _x("isNavPersonalizationDisabled", True) + _x("isNavTabPersistenceDisabled", False)
            + _x("label", "Margem de Obras") + _x("navType", "Standard")
            + "".join(_x("tabs", t) for t in ["Inicio_Margem_de_Obras", "Obra__c", "Disciplina_Obra__c", "Snapshot_Semanal__c",
                                              "standard-report", "standard-Dashboard"])
@@ -498,6 +498,16 @@ def _telas() -> None:
                + _x("label", "Destaques") + "</CompactLayout>\n")
         arq = obj / o / f"{o}.object-meta.xml"
         xml = arq.read_text(encoding="utf-8")
+        if o == "Obra__c" and "<actionOverrides>" not in xml:
+            # Página Lightning da Obra como padrão do ORG (vale em qualquer app, busca ou link)
+            override = ("    <actionOverrides>\n        <actionName>View</actionName>\n"
+                        "        <comment>Pagina Lightning da Obra (padrao do org)</comment>\n"
+                        "        <content>Obra_Pagina</content>\n        <formFactor>Large</formFactor>\n"
+                        "        <skipRecordTypeSelect>false</skipRecordTypeSelect>\n"
+                        "        <type>Flexipage</type>\n    </actionOverrides>\n")
+            ancora = "    <compactLayoutAssignment>" if "<compactLayoutAssignment>" in xml else "    <deploymentStatus>"
+            xml = xml.replace(ancora, override + ancora, 1)
+            arq.write_text(xml, encoding="utf-8")
         if "<compactLayoutAssignment>" not in xml:
             xml = xml.replace("    <deploymentStatus>", f"    <compactLayoutAssignment>{nome}</compactLayoutAssignment>\n"
                                                          "    <deploymentStatus>", 1)
